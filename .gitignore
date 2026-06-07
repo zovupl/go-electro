@@ -1,0 +1,26 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Source assets (not needed in repo)
+BRIEF.txt
+LOGO JPG.jpg
+LOGO.png
+OPINII.png
+OPINII 2.png
+PHOTO BANNER NA ULICY.webp
+Photo 1.webp
+Photo 2.webp
+Photo 3.webp
+Photo 4.webp
+Photo 5.webp
+Photo 6.webp
+Photo 7.webp
+Photo 8.webp
+Photo good *.webp
+Усллуги *.png

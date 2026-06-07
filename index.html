@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoSerwis Go Electro – Serwis Hybryd i Elektryków Warszawa Okęcie</title>
+  <meta name="description" content="AutoSerwis Go Electro – profesjonalny serwis aut hybrydowych i elektrycznych w Warszawie (Okęcie). Toyota, Lexus, BMW, Mercedes, VW. Zadzwoń: +48 690 222 010.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AutoSerwis Go Electro – Serwis Hybryd Warszawa">
+  <meta property="og:description" content="Specjaliści od hybryd i elektryków. Toyota, Lexus, BMW, Mercedes, VW. Warszawa Okęcie. Zadzwoń: +48 690 222 010.">
+  <meta property="og:image" content="assets/img/hero-bg.webp">
+  <meta property="og:locale" content="pl_PL">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["AutoRepair", "LocalBusiness"],
+    "name": "AutoSerwis Go Electro",
+    "url": "https://matsveidzmitryieu.github.io/go-electro/",
+    "telephone": "+48690222010",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Szyszkowa 41a",
+      "postalCode": "02-285",
+      "addressLocality": "Warszawa",
+      "addressRegion": "mazowieckie",
+      "addressCountry": "PL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.1706,
+      "longitude": 20.9671
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "10:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4",
+      "reviewCount": "73"
+    },
+    "sameAs": [
+      "https://www.instagram.com/go.electro.wawa/",
+      "https://www.facebook.com/profile.php?id=61560032406034",
+      "https://www.tiktok.com/@go.electro.wawa",
+      "https://www.youtube.com/@go.electro/shorts"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================
+       NAV
+  ======================================================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#hero" class="nav__logo" aria-label="Go Electro – strona główna">
+        <img src="assets/img/logo.png" alt="Go Electro logo" width="140" height="56">
+      </a>
+
+      <nav class="nav__links" aria-label="Nawigacja główna">
+        <a href="#about">O nas</a>
+        <a href="#services">Usługi</a>
+        <a href="#gallery">Galeria</a>
+        <a href="#reviews">Opinie</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <a href="tel:+48690222010" class="btn btn--accent nav__cta">Zadzwoń</a>
+
+      <button class="nav__hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="nav-mobile" aria-hidden="true">
+      <a href="#about">O nas</a>
+      <a href="#services">Usługi</a>
+      <a href="#gallery">Galeria</a>
+      <a href="#reviews">Opinie</a>
+      <a href="#contact">Kontakt</a>
+      <a href="tel:+48690222010" class="btn btn--accent">Zadzwoń</a>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       HERO
+  ======================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="assets/img/hero-bg.webp" alt="Warsztat Go Electro" loading="eager" fetchpriority="high">
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content container">
+      <div class="hero__badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#39FF14" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>4.4 / 73 opinie Google</span>
+      </div>
+
+      <h1 class="hero__title">
+        Serwis hybryd<br>i elektryków<br><em>Warszawa</em>
+      </h1>
+
+      <p class="hero__sub">
+        Specjaliści od Toyota, Lexus, BMW, Mercedes i VW.<br>
+        Diagnostyka, baterie HV, elektryka, rozrząd. Okęcie.
+      </p>
+
+      <div class="hero__actions">
+        <a href="tel:+48690222010" class="btn btn--accent btn--lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.64A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +48 690 222 010
+        </a>
+        <a href="#services" class="btn btn--outline btn--lg">Nasze usługi</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       O NAS
+  ======================================================== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="section__label">O nas</p>
+          <h2 class="section__title">Elektryczne serce<br>każdego auta</h2>
+          <p class="about__desc">
+            Go Electro to warsztat, który zna hybrydy i elektryki od środka.
+            Pracujemy z układami HEV i PHEV na poziomie dealerskim –
+            bez przepłacania u oficjalnego serwisu. Każda naprawa to
+            oryginalne części i pełna diagnostyka komputerowa.
+          </p>
+          <div class="about__pillars">
+            <div class="about__pillar">
+              <div class="about__pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+              </div>
+              <div>
+                <strong>Hybrydy i EV</strong>
+                <p>HEV, PHEV, BEV – diagnozujemy i naprawiamy baterie HV, inwertery, silniki elektryczne.</p>
+              </div>
+            </div>
+            <div class="about__pillar">
+              <div class="about__pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <strong>Oryginalne części</strong>
+                <p>Używamy tylko sprawdzonych podzespołów OEM i OE. Żadnych zamienników na skróty.</p>
+              </div>
+            </div>
+            <div class="about__pillar">
+              <div class="about__pillar-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <strong>Szybka realizacja</strong>
+                <p>Większość napraw tego samego dnia. Diagnostyka i wycena od ręki.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__images">
+          <img src="assets/img/about-1.webp" alt="Mechanik przy pracy w Go Electro" loading="lazy" class="about__img about__img--main">
+          <img src="assets/img/about-2.webp" alt="Diagnostyka auta hybrydowego" loading="lazy" class="about__img about__img--accent">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       USŁUGI
+  ======================================================== -->
+  <section class="services section section--dark" id="services">
+    <div class="container">
+      <p class="section__label">Usługi</p>
+      <h2 class="section__title">Co robimy</h2>
+      <p class="section__sub">Pełen zakres napraw dla aut hybrydowych i elektrycznych.</p>
+
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Diagnostyka komputerowa</h3>
+          <p>Pełen odczyt błędów wszystkich sterowników. Interpretacja i plan naprawy.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+          </div>
+          <h3>Serwis układu hybrydowego</h3>
+          <p>Naprawa i kalibracja układów HEV/PHEV. Inwertery, silniki trakcyjne, przekształtniki.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18H3a2 2 0 01-2-2V8a2 2 0 012-2h3.19M15 6h2a2 2 0 012 2v8a2 2 0 01-2 2h-3.19"/><line x1="23" y1="13" x2="23" y2="11"/><polyline points="11 6 7 12 13 12 9 18"/></svg>
+          </div>
+          <h3>Regeneracja baterii HV</h3>
+          <p>Regeneracja i wymiana akumulatorów trakcyjnych. Diagnostyka każdej celi.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 2 13 9 20 9"/><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9L13 2z"/></svg>
+          </div>
+          <h3>Elektryka i elektronika</h3>
+          <p>Naprawa instalacji elektrycznej, sterowników, modułów, ADAS i CarPlay.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Wymiana rozrządu</h3>
+          <p>Pasek i łańcuch rozrządu ze wszystkimi elementami pomocniczymi.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Kapitalny remont silnika</h3>
+          <p>Pełny remont jednostki napędowej. Uszczelnienia, głowice, wały.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <h3>Hamulce i zawieszenie</h3>
+          <p>Klocki, tarcze, amortyzatory, geometria. Sprawna jazda przez cały rok.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Wymiana oleju i płynów</h3>
+          <p>Olej, filtry, płyn hamulcowy, chłodniczy. Cena wymiany oleju od 200 zł – wszystko wliczone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MARKI
+  ======================================================== -->
+  <section class="brands section" id="brands">
+    <div class="container">
+      <p class="section__label">Obsługiwane marki</p>
+      <div class="brands__strip">
+        <span>Toyota</span>
+        <span class="brands__dot" aria-hidden="true">·</span>
+        <span>Lexus</span>
+        <span class="brands__dot" aria-hidden="true">·</span>
+        <span>Mercedes</span>
+        <span class="brands__dot" aria-hidden="true">·</span>
+        <span>BMW</span>
+        <span class="brands__dot" aria-hidden="true">·</span>
+        <span>Volkswagen</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       WIDEO – YouTube Shorts
+  ======================================================== -->
+  <section class="video section section--dark" id="video">
+    <div class="container">
+      <p class="section__label">Realizacje</p>
+      <h2 class="section__title">W naszym warsztacie</h2>
+      <p class="section__sub">Prawdziwe naprawy. Prawdziwe efekty.</p>
+
+      <div class="video__grid">
+        <div class="video__item">
+          <iframe src="https://www.youtube.com/embed/3zWecSwq9SA" title="Go Electro – realizacja 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video__item">
+          <iframe src="https://www.youtube.com/embed/uAb5NAb37os" title="Go Electro – realizacja 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video__item">
+          <iframe src="https://www.youtube.com/embed/T56qQI-ubsw" title="Go Electro – realizacja 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video__item">
+          <iframe src="https://www.youtube.com/embed/2RW55ES2J-s" title="Go Electro – realizacja 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="video__item">
+          <iframe src="https://www.youtube.com/embed/MFVckCn7IXc" title="Go Electro – realizacja 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       GALERIA
+  ======================================================== -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <p class="section__label">Galeria</p>
+      <h2 class="section__title">Nasze prace</h2>
+
+      <div class="gallery__grid" id="gallery-grid">
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro – naprawa" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g02.webp" alt="Diagnostyka auta hybrydowego" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy">
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/img/gallery/g12.webp" alt="Bateria HV hybryd" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="gallery__more">
+        <button class="btn btn--outline" id="gallery-show-more">Więcej zdjęć</button>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Podgląd zdjęcia">
+      <button class="lightbox__close" aria-label="Zamknij">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button class="lightbox__prev" aria-label="Poprzednie zdjęcie">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="lightbox__img-wrap">
+        <img src="" alt="" id="lightbox-img">
+      </div>
+      <button class="lightbox__next" aria-label="Następne zdjęcie">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       OPINIE
+  ======================================================== -->
+  <section class="reviews section section--dark" id="reviews">
+    <div class="container">
+      <p class="section__label">Opinie</p>
+      <h2 class="section__title">Co mówią klienci</h2>
+
+      <div class="reviews__summary">
+        <div class="reviews__score">4.4</div>
+        <div class="reviews__stars" aria-label="Ocena 4.4 na 5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#39FF14" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#39FF14" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#39FF14" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#39FF14" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#39FF14" opacity="0.4" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="reviews__count">na podstawie 73 opinii w Google</p>
+      </div>
+
+      <div class="reviews__grid">
+        <article class="review-card">
+          <div class="review-card__stars" aria-label="Ocena 5 na 5">★★★★★</div>
+          <blockquote>"Świetny serwis – fachowa obsługa, szybka naprawa i dobra cena. Polecam!"</blockquote>
+          <footer class="review-card__author">Ivan Tereshchuk</footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__stars" aria-label="Ocena 5 na 5">★★★★★</div>
+          <blockquote>"Szybko znaleźli lawetę, zabrali samochód wieczorem, a już w sobotę rano wszystko było naprawione. Bardzo szybko i profesjonalnie."</blockquote>
+          <footer class="review-card__author">Artem</footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__stars" aria-label="Ocena 5 na 5">★★★★★</div>
+          <blockquote>"Bardzo dobrzy fachowcy. Szybko analizują problem, nie naciągają na zbędne koszta. Korzystałam już kilka razy i zawsze jestem zadowolona."</blockquote>
+          <footer class="review-card__author">Magda Dudek</footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__stars" aria-label="Ocena 5 na 5">★★★★★</div>
+          <blockquote>"Gorąco polecam! Mój problem z samochodem został bardzo szybko i sprawnie załatwiony, a do tego jest miła i profesjonalna obsługa!"</blockquote>
+          <footer class="review-card__author">Adrian Glazewski</footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__stars" aria-label="Ocena 5 na 5">★★★★★</div>
+          <blockquote>"Mój problem został szybko rozwiązany. Otrzymałam również wysokiej jakości konsultacje od pracowników."</blockquote>
+          <footer class="review-card__author">Anastasiia</footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-card__stars" aria-label="Ocena 5 na 5">★★★★★</div>
+          <blockquote>"Fajny serwis. Panowie przeprowadzili diagnostykę akumulatora i sieci oraz szczegółowo wyjaśnili wyniki."</blockquote>
+          <footer class="review-card__author">Kanstantsin Harbachou</footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       KONTAKT
+  ======================================================== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <p class="section__label">Kontakt</p>
+      <h2 class="section__title">Przyjedź do nas</h2>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="contact__block">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>Adres</strong>
+              <p>Szyszkowa 41a, 02-285 Warszawa<br><span class="text-muted">(Okęcie)</span></p>
+            </div>
+          </div>
+
+          <div class="contact__block">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.64A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <div>
+              <strong>Telefon</strong>
+              <a href="tel:+48690222010" class="contact__tel">+48 690 222 010</a>
+            </div>
+          </div>
+
+          <div class="contact__block">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39FF14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <strong>Godziny otwarcia</strong>
+              <p>Pon – Pt: 10:00 – 18:00<br><span class="text-muted">Sob – Nd: zamknięte</span></p>
+            </div>
+          </div>
+
+          <a href="tel:+48690222010" class="btn btn--accent btn--lg contact__cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.64A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Zadzwoń teraz
+          </a>
+        </div>
+
+        <div class="contact__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.1!2d20.9671!3d52.1706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDEwJzE0LjIiTiAyMMKwNTgnMDUuNiJF!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokalizacja AutoSerwis Go Electro – Szyszkowa 41a Warszawa">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#hero" class="footer__logo" aria-label="Go Electro – powrót do góry">
+          <img src="assets/img/logo.png" alt="Go Electro" width="120" height="48">
+        </a>
+
+        <nav class="footer__social" aria-label="Social media">
+          <a href="https://www.instagram.com/go.electro.wawa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@go.electro.wawa" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61560032406034" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@go.electro/shorts" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <a href="https://www.threads.com/@go.electro.wawa" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" stroke="none"/><path d="M12 3C7 3 4 6.5 4 12s3 9 8 9c3.5 0 6-1.5 7.5-4M16 8c-1-2-3-3-5-2.5-3 .7-4 4-3 7s4 5 7 3.5"/><path d="M12 12c1 0 3-.5 3-2s-2-2-3-2-3 1-3 3 1.5 4 4 4"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 AutoSerwis Go Electro. Wszelkie prawa zastrzeżone.</p>
+        <p>Szyszkowa 41a, 02-285 Warszawa · <a href="tel:+48690222010">+48 690 222 010</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA -->
+  <a href="tel:+48690222010" class="mobile-cta" aria-label="Zadzwoń do Go Electro">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.64A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Zadzwoń
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
