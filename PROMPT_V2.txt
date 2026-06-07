@@ -1,0 +1,108 @@
+Mamy już gotową stronę go-electro. Teraz wprowadzamy DUŻE zmiany.
+Czytaj uważnie — to nie są drobne poprawki, to redesign.
+
+=== 1. KOLOR I MOTYW ===
+Domyślny motyw: BIAŁY (jasny). Nie czarny.
+Tło: #ffffff lub bardzo jasny szary #f8f8f8.
+Tekst główny: #111111.
+Akcent: ten sam electric green (#39FF14 lub podobny) — ale używaj go OSZCZĘDNIE
+na CTA, ikonach, podkreśleniach. Nie wszędzie.
+Dodaj przełącznik dark/light mode (przycisk w nawigacji, ikona słońca/księżyca).
+W dark mode wróć do obecnego czarnego. Domyślnie zawsze biały.
+
+Inspiracja wizualna: https://www.polestar.com/de/
+Przestrzeń, typografia, minimalizm, premium. Nie kopiuj layoutu — przejmij filozofię.
+
+=== 2. LOGO ===
+Logo nie ładuje się poprawnie. Sprawdź ścieżkę do pliku.
+Użyj: assets/img/LOGO TRANSPARENT BACKGROUND PNG.png
+Jeśli spacje w nazwie pliku robią problem — zmień nazwę na: logo-transparent.png
+i zaktualizuj ścieżkę w HTML.
+Logo powinno być widoczne na białym tle (wersja z przezroczystym tłem).
+Na dark mode możesz użyć wersji białej jeśli potrzeba.
+
+=== 3. PRZEŁĄCZNIK JĘZYKA ===
+Dodaj w nawigacji (prawy górny róg, przed CTA "Zadzwoń") wybór języka:
+PL | EN | RU | UA
+Implementacja: i18n przez JavaScript — wszystkie teksty w obiekcie translations{}.
+Języki do przetłumaczenia: PL (główny), EN, RU, UA.
+Przetłumacz WSZYSTKIE teksty na stronie: nawigację, sekcje, przyciski, stopkę.
+Aktywny język podkreślony lub pogrubiony.
+Zapisuj wybrany język w localStorage.
+
+=== 4. HERO — WIDEO ===
+W sekcji hero dodaj wideo w tle (autoplay, muted, loop, playsinline).
+Użyj pierwszego YouTube Shorta jako fallback embed LUB jeśli masz plik wideo
+lokalny — użyj go.
+Jeśli tylko YouTube: osadź jako iframe z autoplay w tle hero z overlay.
+Alternatywnie: sekcja hero z dużym zdjęciem (Photo good 1 lub Photo good 2)
++ osobna sekcja "W naszym warsztacie" z YouTube Shorts poniżej fold.
+Ocenę 4.4 Google USUŃ z hero. Zostaw ją tylko w sekcji Opinie na dole.
+
+=== 5. PODSTRONY (nie skam-jednostrona) ===
+Utwórz osobne strony HTML dla głównych usług:
+- /uslugi/diagnostyka.html
+- /uslugi/baterie-hv.html
+- /uslugi/hybrydy.html
+Każda podstrona: nagłówek usługi, opis, zdjęcie, CTA zadzwoń, link powrotu.
+Na głównej stronie karty usług linkują do tych podstron.
+Nawigacja i stopka identyczne na wszystkich stronach (użyj include lub skopiuj).
+
+=== 6. MARKI SAMOCHODÓW ===
+W sekcji "Obsługiwane marki" NIE wymieniaj tylko 4-5 marek.
+Napisz tak (po polsku):
+"Specjalizujemy się w Toyota, Lexus, BMW, Mercedes-Benz, Volkswagen,
+Honda, Hyundai, Kia, Mitsubishi, Ford — oraz wszystkich innych markach
+z napędem hybrydowym i elektrycznym."
+Lub stylowo jako pas z nazwami marek przewijającymi się (marquee/CSS animation).
+Ważne: dać wrażenie że obsługujemy KAŻDĄ markę hybrydową.
+
+=== 7. GOOGLE MAPS — NAPRAWA ===
+Obecna mapa nie działa. Zastąp embed API innym sposobem.
+Użyj tego iframe (działa bez klucza API):
+<iframe
+  src="https://www.google.com/maps?q=Szyszkowa+41a,+02-285+Warszawa&output=embed"
+  width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+Lub użyj OpenStreetMap (Leaflet.js) jako alternatywę — całkowicie darmowe.
+Mapa musi działać i pokazywać Szyszkowa 41a, Warszawa.
+
+=== 8. NOWY BLOK — EWAKUACJA ===
+Dodaj nową sekcję między Usługami a Galerią.
+Tytuł: "Przyjedziemy po Twoje auto"
+Treść: Masz awarię? Nie musisz szukać pomocy. Zapewniamy transport auta
+do naszego warsztatu — bezpiecznie, w każdym stanie. Cena ewakuacji od 250 zł.
+Zdjęcia: użyj plików Photo good 9, Photo good 11, Photo good 12
+(layout: jedno duże + dwa mniejsze obok, lub slider).
+CTA: przycisk "Zadzwoń: +48 690 222 010"
+
+=== 9. ZDJĘCIA ===
+Priorytet na zdjęciach z nazwą "Photo good *" — są najlepszej jakości.
+Zoptymalizuj wszystkie zdjęcia przed użyciem:
+- Użyj atrybutu loading="lazy" na wszystkich <img>
+- Dodaj srcset jeśli możliwe
+- Maksymalny rozmiar wyświetlanego pliku: staraj się nie przekraczać 300-400kb
+  (jeśli możesz użyć narzędzia do kompresji w bash — zrób to)
+Jeśli zdjęcia wyglądają słabo — ostyluj je z object-fit: cover i odpowiednim
+kadrowaniem, nie rozciągaj.
+
+=== 10. OGÓLNA JAKOŚĆ ===
+Strona ma wyglądać jak zrobiona przez studio, nie jak szablon.
+- Sekcje mają mieć dużo przestrzeni (padding min 80-120px góra/dół)
+- Typografia: użyj Google Fonts — "Inter" lub "Plus Jakarta Sans"
+- Płynne scroll-reveal animacje (Intersection Observer lub GSAP ScrollTrigger)
+- Hover effects na kartach usług (subtelne uniesienie, cień)
+- Sticky nawigacja z blur backdrop-filter na białym tle
+- Mobile: hamburger menu, wszystko czytelne na 375px
+
+=== KOLEJNOŚĆ PRACY ===
+1. Najpierw napraw logo i mapę — to krytyczne błędy.
+2. Zmień motyw na biały + dodaj dark mode toggle.
+3. Dodaj i18n (PL/EN/RU/UA).
+4. Przebuduj hero (wideo lub mocne zdjęcie, bez oceny 4.4).
+5. Dodaj blok ewakuacji.
+6. Utwórz podstrony usług.
+7. Popraw sekcję marek.
+8. Optymalizacja zdjęć i animacje.
+
+Pracuj etapami. Po każdym etapie czekaj na ok.
