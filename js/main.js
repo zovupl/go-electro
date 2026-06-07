@@ -41,7 +41,7 @@ const translations = {
     'contact.hours.weekdays':'Pon – Pt: 10:00 – 18:00','contact.hours.weekend':'Sob – Nd: zamknięte',
     'contact.cta':'Zadzwoń teraz',
     'footer.copy':'© 2025 AutoSerwis Go Electro. Wszelkie prawa zastrzeżone.',
-    'footer.address':'Szyszkowa 41a, 02-285 Warszawa','mobile.cta':'Zadzwoń',
+    'footer.address':'Szyszkowa 41a, 02-285 Warszawa','mobile.cta':'Zadzwoń: +48 690 222 010',
   },
   en: {
     'nav.about':'About','nav.services':'Services','nav.gallery':'Gallery',
@@ -77,7 +77,7 @@ const translations = {
     'contact.hours.weekdays':'Mon – Fri: 10:00 – 18:00','contact.hours.weekend':'Sat – Sun: closed',
     'contact.cta':'Call now',
     'footer.copy':'© 2025 AutoSerwis Go Electro. All rights reserved.',
-    'footer.address':'Szyszkowa 41a, 02-285 Warsaw','mobile.cta':'Call',
+    'footer.address':'Szyszkowa 41a, 02-285 Warsaw','mobile.cta':'Call: +48 690 222 010',
   },
   ru: {
     'nav.about':'О нас','nav.services':'Услуги','nav.gallery':'Галерея',
@@ -113,7 +113,7 @@ const translations = {
     'contact.hours.weekdays':'Пн – Пт: 10:00 – 18:00','contact.hours.weekend':'Сб – Вс: закрыто',
     'contact.cta':'Позвонить сейчас',
     'footer.copy':'© 2025 AutoSerwis Go Electro. Все права защищены.',
-    'footer.address':'Шишкова 41a, 02-285 Варшава','mobile.cta':'Звонить',
+    'footer.address':'Шишкова 41a, 02-285 Варшава','mobile.cta':'Позвонить: +48 690 222 010',
   },
   ua: {
     'nav.about':'Про нас','nav.services':'Послуги','nav.gallery':'Галерея',
@@ -149,7 +149,7 @@ const translations = {
     'contact.hours.weekdays':'Пн – Пт: 10:00 – 18:00','contact.hours.weekend':'Сб – Нд: зачинено',
     'contact.cta':'Зателефонувати зараз',
     'footer.copy':'© 2025 AutoSerwis Go Electro. Усі права захищені.',
-    'footer.address':'Шишкова 41a, 02-285 Варшава','mobile.cta':'Дзвонити',
+    'footer.address':'Шишкова 41a, 02-285 Варшава','mobile.cta':'Зателефонувати: +48 690 222 010',
   }
 };
 
