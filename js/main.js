@@ -210,26 +210,24 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* --- Hero slideshow --- */
+  /* --- Hero slideshow — cross-fade, no flash --- */
   const slides = document.querySelectorAll('.hero-slide');
-  const flash  = document.querySelector('.hero-flash');
-  if (slides.length && flash) {
+  if (slides.length) {
     let cur = 0;
     slides[0].classList.add('active');
 
     setInterval(() => {
-      flash.classList.add('on');
+      const next = (cur + 1) % slides.length;
+
+      slides[next].style.transform = 'scale(1.0)';
+      slides[next].classList.add('active');
+
       setTimeout(() => {
         slides[cur].classList.remove('active');
-        slides[cur].style.animation = 'none';
-        void slides[cur].offsetHeight; // force reflow
-        slides[cur].style.animation = '';
         slides[cur].style.transform = '';
-        cur = (cur + 1) % slides.length;
-        slides[cur].classList.add('active');
-        flash.classList.remove('on');
-      }, 400);
-    }, 5000);
+        cur = next;
+      }, 1200);
+    }, 7000);
   }
 
   /* --- Hamburger --- */
