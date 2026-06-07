@@ -411,7 +411,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   pointer-events: none;
   transition: opacity 0.4s;
 }
-.hero-flash.on { opacity: 0.9; }
+.hero-flash.on { opacity: 0.45; }
 
 .hero__overlay {
   position: absolute;
