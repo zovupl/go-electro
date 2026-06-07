@@ -42,7 +42,8 @@
 <header class="nav" id="nav">
   <div class="nav__inner container">
     <a href="#hero" class="nav__logo" aria-label="Go Electro">
-      <img src="assets/img/logo-transparent.png" alt="Go Electro logo" width="130" height="52">
+      <img src="assets/img/logo-white.png" class="nav-logo-white" alt="Go Electro logo" style="height:80px;width:auto;">
+      <img src="assets/img/logo-black.png" class="nav-logo-dark"  alt="Go Electro logo" style="height:80px;width:auto;">
     </a>
     <nav class="nav__links" aria-label="Nawigacja główna">
       <a href="#about"    data-i18n="nav.about">O nas</a>
@@ -93,9 +94,12 @@
 <!-- ======================================================== HERO -->
 <section class="hero" id="hero">
   <div class="hero__slides" aria-hidden="true">
-    <div class="hero__slide hero__slide--1"></div>
-    <div class="hero__slide hero__slide--2"></div>
-    <div class="hero__slide hero__slide--3"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/hero-1.webp')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/hero-2.webp')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/hero-3.webp')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/hero-4.webp')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/hero-5.webp')"></div>
+    <div class="hero-flash"></div>
     <div class="hero__overlay"></div>
   </div>
   <div class="hero__content container">
@@ -315,29 +319,31 @@
   <div class="container">
     <p class="section__label" data-i18n="gallery.label">Galeria</p>
     <h2 class="section__title" data-i18n="gallery.title">Nasze prace</h2>
-    <div class="gallery__grid" id="gallery-grid">
-      <figure class="gallery__item"><img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g02.webp" alt="Diagnostyka hybryd" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy"></figure>
-      <figure class="gallery__item"><img src="assets/img/gallery/g12.webp" alt="Bateria HV" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g13.webp" alt="Naprawa hybrydy" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g14.webp" alt="Serwis elektryczny" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g15.webp" alt="Auto w warsztacie" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g16.webp" alt="Naprawa silnika" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g17.webp" alt="Wymiana oleju" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g18.webp" alt="Serwis hybrydy" loading="lazy"></figure>
-      <figure class="gallery__item gallery__item--hidden"><img src="assets/img/gallery/g19.webp" alt="Warsztat Go Electro" loading="lazy"></figure>
-    </div>
-    <div class="gallery__more">
-      <button class="btn btn--outline" id="gallery-show-more" data-i18n="gallery.more">Więcej zdjęć</button>
+    <div class="gallery-wrapper">
+      <div class="gallery-track" id="galleryTrack">
+        <img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro" loading="lazy">
+        <img src="assets/img/gallery/g02.webp" alt="Diagnostyka hybryd" loading="lazy">
+        <img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy">
+        <img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy">
+        <img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy">
+        <img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy">
+        <img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy">
+        <img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy">
+        <img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy">
+        <img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy">
+        <img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy">
+        <img src="assets/img/gallery/g12.webp" alt="Bateria HV" loading="lazy">
+        <img src="assets/img/gallery/g13.webp" alt="Naprawa hybrydy" loading="lazy">
+        <img src="assets/img/gallery/g14.webp" alt="Serwis elektryczny" loading="lazy">
+        <img src="assets/img/gallery/g15.webp" alt="Auto w warsztacie" loading="lazy">
+        <img src="assets/img/gallery/g16.webp" alt="Naprawa silnika" loading="lazy">
+        <img src="assets/img/gallery/g17.webp" alt="Wymiana oleju" loading="lazy">
+        <img src="assets/img/gallery/g18.webp" alt="Serwis hybrydy" loading="lazy">
+        <img src="assets/img/gallery/g19.webp" alt="Warsztat Go Electro" loading="lazy">
+      </div>
+      <div class="gallery-bar">
+        <div class="gallery-thumb" id="galleryThumb"></div>
+      </div>
     </div>
   </div>
   <!-- Lightbox -->

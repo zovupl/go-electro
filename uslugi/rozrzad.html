@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,10 @@
 <body>
 <header class="nav scrolled" id="nav">
   <div class="nav__inner container">
-    <a href="../index.html" class="nav__logo"><img src="../assets/img/logo-transparent.png" alt="Go Electro" width="130" height="52"></a>
+    <a href="../index.html" class="nav__logo">
+      <img src="../assets/img/logo-white.png" class="nav-logo-white" alt="Go Electro" style="height:80px;width:auto;">
+      <img src="../assets/img/logo-black.png" class="nav-logo-dark"  alt="Go Electro" style="height:80px;width:auto;">
+    </a>
     <nav class="nav__links">
       <a href="../index.html#about">O nas</a>
       <a href="../index.html#services">Usługi</a>
@@ -42,12 +45,12 @@
 </header>
 
 <main>
-  <section class="subpage-hero">
+  <div class="service-hero-img">
+    <img src="../assets/img/gallery/g08.webp" alt="Wymiana rozrządu" style="width:100%;height:380px;object-fit:cover;display:block;">
+  </div>
+  <section class="subpage-hero service-hero-reduced">
     <div class="container">
       <a href="../index.html#services" class="subpage-back">← Wszystkie usługi</a>
-      <div class="subpage-hero__icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      </div>
       <p class="section__label">Usługi</p>
       <h1 class="subpage-hero__title">Wymiana rozrządu</h1>
       <p class="subpage-hero__sub">Pasek lub łańcuch rozrządu z pełnym zestawem elementów pomocniczych – zgodnie z zaleceniami producenta.</p>

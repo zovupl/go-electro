@@ -14,7 +14,10 @@
 <body>
 <header class="nav scrolled" id="nav">
   <div class="nav__inner container">
-    <a href="index.html" class="nav__logo"><img src="assets/img/logo-transparent.png" alt="Go Electro" width="130" height="52"></a>
+    <a href="index.html" class="nav__logo">
+      <img src="assets/img/logo-white.png" class="nav-logo-white" alt="Go Electro" style="height:80px;width:auto;">
+      <img src="assets/img/logo-black.png" class="nav-logo-dark"  alt="Go Electro" style="height:80px;width:auto;">
+    </a>
     <nav class="nav__links">
       <a href="o-nas.html">O nas</a>
       <a href="index.html#services">Usługi</a>
@@ -53,26 +56,31 @@
 
   <section class="section">
     <div class="container">
-      <div class="gallery__grid" id="gallery-grid">
-        <figure class="gallery__item"><img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g02.webp" alt="Diagnostyka hybryd" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g12.webp" alt="Bateria HV" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g13.webp" alt="Naprawa hybrydy" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g14.webp" alt="Serwis elektryczny" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g15.webp" alt="Auto w warsztacie" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g16.webp" alt="Naprawa silnika" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g17.webp" alt="Wymiana oleju" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g18.webp" alt="Serwis hybrydy" loading="lazy"></figure>
-        <figure class="gallery__item"><img src="assets/img/gallery/g19.webp" alt="Warsztat Go Electro" loading="lazy"></figure>
+      <div class="gallery-wrapper">
+        <div class="gallery-track" id="galleryTrack">
+          <img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro" loading="lazy">
+          <img src="assets/img/gallery/g02.webp" alt="Diagnostyka hybryd" loading="lazy">
+          <img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy">
+          <img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy">
+          <img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy">
+          <img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy">
+          <img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy">
+          <img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy">
+          <img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy">
+          <img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy">
+          <img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy">
+          <img src="assets/img/gallery/g12.webp" alt="Bateria HV" loading="lazy">
+          <img src="assets/img/gallery/g13.webp" alt="Naprawa hybrydy" loading="lazy">
+          <img src="assets/img/gallery/g14.webp" alt="Serwis elektryczny" loading="lazy">
+          <img src="assets/img/gallery/g15.webp" alt="Auto w warsztacie" loading="lazy">
+          <img src="assets/img/gallery/g16.webp" alt="Naprawa silnika" loading="lazy">
+          <img src="assets/img/gallery/g17.webp" alt="Wymiana oleju" loading="lazy">
+          <img src="assets/img/gallery/g18.webp" alt="Serwis hybrydy" loading="lazy">
+          <img src="assets/img/gallery/g19.webp" alt="Warsztat Go Electro" loading="lazy">
+        </div>
+        <div class="gallery-bar">
+          <div class="gallery-thumb" id="galleryThumb"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -96,37 +104,51 @@
 </footer>
 
 <script>
-/* Minimal lightbox for gallery page */
-const html2 = document.documentElement;
-html2.setAttribute('data-theme', localStorage.getItem('ge-theme') === 'dark' ? 'dark' : 'light');
+const H = document.documentElement;
+H.setAttribute('data-theme', localStorage.getItem('ge-theme') === 'dark' ? 'dark' : 'light');
 document.getElementById('theme-toggle')?.addEventListener('click', () => {
-  const d = html2.getAttribute('data-theme') === 'dark';
-  html2.setAttribute('data-theme', d ? 'light' : 'dark');
+  const d = H.getAttribute('data-theme') === 'dark';
+  H.setAttribute('data-theme', d ? 'light' : 'dark');
   localStorage.setItem('ge-theme', d ? 'light' : 'dark');
 });
-/* language */
-const lb = localStorage.getItem('ge-lang') || 'pl';
+const gl = localStorage.getItem('ge-lang') || 'pl';
 document.querySelectorAll('.lang-btn').forEach(b => {
-  b.classList.toggle('active', b.dataset.lang === lb);
-  b.addEventListener('click', () => {
-    document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    localStorage.setItem('ge-lang', b.dataset.lang);
-  });
+  b.classList.toggle('active', b.dataset.lang === gl);
+  b.addEventListener('click', () => { document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); localStorage.setItem('ge-lang', b.dataset.lang); });
 });
-/* lightbox */
-const items = Array.from(document.querySelectorAll('.gallery__item img'));
+
+/* Gallery drag scroll */
+const track = document.getElementById('galleryTrack');
+const thumb = document.getElementById('galleryThumb');
+let drag = false, startX = 0, scrollLeft = 0;
+track.addEventListener('mousedown', e => { drag=true; startX=e.pageX; scrollLeft=track.scrollLeft; track.classList.add('dragging'); });
+document.addEventListener('mouseup', () => { drag=false; track.classList.remove('dragging'); });
+track.addEventListener('mousemove', e => { if(!drag) return; e.preventDefault(); track.scrollLeft = scrollLeft-(e.pageX-startX)*1.5; });
+track.addEventListener('touchstart', e => { startX=e.touches[0].pageX; scrollLeft=track.scrollLeft; }, {passive:true});
+track.addEventListener('touchmove', e => { track.scrollLeft = scrollLeft-(e.touches[0].pageX-startX); }, {passive:true});
+const updateThumb = () => {
+  const bar = thumb.parentElement;
+  const ratio = track.scrollLeft / Math.max(1, track.scrollWidth - track.clientWidth);
+  const tw = Math.max(40, bar.offsetWidth * track.clientWidth / track.scrollWidth);
+  thumb.style.width = tw+'px'; thumb.style.left = (ratio*(bar.offsetWidth-tw))+'px';
+};
+track.addEventListener('scroll', updateThumb, {passive:true});
+setTimeout(updateThumb, 200);
+
+/* Lightbox */
+const items = Array.from(track.querySelectorAll('img'));
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lightbox-img');
 let cur = 0;
-function openLb(i) { cur = i; lbImg.src = items[i].src; lbImg.alt = items[i].alt; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false'); }
-function closeLb() { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); }
-items.forEach((img, i) => img.parentElement.addEventListener('click', () => openLb(i)));
+const openLb = i => { cur=i; lbImg.src=items[i].src; lbImg.alt=items[i].alt; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
+const closeLb = () => { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
+const nav = dir => { cur=(cur+dir+items.length)%items.length; lbImg.style.opacity='0'; setTimeout(()=>{ lbImg.src=items[cur].src; lbImg.alt=items[cur].alt; lbImg.style.opacity='1'; },110); };
+items.forEach((img,i) => { img.style.pointerEvents='auto'; img.style.cursor='pointer'; img.addEventListener('click', ()=>{ if(!drag) openLb(i); }); });
 document.querySelector('.lightbox__close').addEventListener('click', closeLb);
-document.querySelector('.lightbox__prev').addEventListener('click', () => openLb((cur - 1 + items.length) % items.length));
-document.querySelector('.lightbox__next').addEventListener('click', () => openLb((cur + 1) % items.length));
-lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
-document.addEventListener('keydown', e => { if (!lightbox.classList.contains('open')) return; if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowLeft') openLb((cur-1+items.length)%items.length); if (e.key === 'ArrowRight') openLb((cur+1)%items.length); });
+document.querySelector('.lightbox__prev').addEventListener('click', ()=>nav(-1));
+document.querySelector('.lightbox__next').addEventListener('click', ()=>nav(1));
+lightbox.addEventListener('click', e=>{ if(e.target===lightbox) closeLb(); });
+document.addEventListener('keydown', e=>{ if(!lightbox.classList.contains('open')) return; if(e.key==='Escape') closeLb(); if(e.key==='ArrowLeft') nav(-1); if(e.key==='ArrowRight') nav(1); });
 </script>
 </body>
 </html>

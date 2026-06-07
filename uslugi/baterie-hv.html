@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,10 @@
 <body>
 <header class="nav scrolled" id="nav">
   <div class="nav__inner container">
-    <a href="../index.html" class="nav__logo"><img src="../assets/img/logo-transparent.png" alt="Go Electro" width="130" height="52"></a>
+    <a href="../index.html" class="nav__logo">
+      <img src="../assets/img/logo-white.png" class="nav-logo-white" alt="Go Electro" style="height:80px;width:auto;">
+      <img src="../assets/img/logo-black.png" class="nav-logo-dark"  alt="Go Electro" style="height:80px;width:auto;">
+    </a>
     <nav class="nav__links">
       <a href="../index.html#about">O nas</a>
       <a href="../index.html#services">Usługi</a>
@@ -42,12 +45,12 @@
 </header>
 
 <main>
-  <section class="subpage-hero">
+  <div class="service-hero-img">
+    <img src="../assets/img/gallery/g12.webp" alt="Regeneracja baterii HV" style="width:100%;height:380px;object-fit:cover;display:block;">
+  </div>
+  <section class="subpage-hero service-hero-reduced">
     <div class="container">
       <a href="../index.html#services" class="subpage-back">← Wszystkie usługi</a>
-      <div class="subpage-hero__icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a2 2 0 01-2-2V8a2 2 0 012-2h3.19M15 6h2a2 2 0 012 2v8a2 2 0 01-2 2h-3.19"/><line x1="23" y1="13" x2="23" y2="11"/><polyline points="11 6 7 12 13 12 9 18"/></svg>
-      </div>
       <p class="section__label">Usługi</p>
       <h1 class="subpage-hero__title">Regeneracja baterii HV</h1>
       <p class="subpage-hero__sub">Przywracamy moc akumulatora trakcyjnego bez wymiany całego pakietu. Taniej, szybciej, ekologicznie.</p>

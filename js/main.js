@@ -199,11 +199,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Apply saved language
   applyLang(currentLang);
 
-  /* --- NAV scroll --- */
+  /* --- NAV scroll (threshold 80px) --- */
   const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 80);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  /* --- Hero slideshow --- */
+  const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+  const heroFlash  = document.querySelector('.hero-flash');
+  if (heroSlides.length && heroFlash) {
+    let heroIdx = 0;
+    heroSlides[0].classList.add('active');
+
+    function nextHeroSlide() {
+      heroFlash.classList.add('flash');
+      setTimeout(() => {
+        heroSlides[heroIdx].classList.remove('active');
+        heroIdx = (heroIdx + 1) % heroSlides.length;
+        heroSlides[heroIdx].classList.add('active');
+        heroFlash.classList.remove('flash');
+        setTimeout(nextHeroSlide, 5000);
+      }, 400);
+    }
+    setTimeout(nextHeroSlide, 5000);
+  }
 
   /* --- Hamburger --- */
   const hamburger  = document.querySelector('.nav__hamburger');
@@ -241,15 +261,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* --- Gallery: show more --- */
-  const showMoreBtn = document.getElementById('gallery-show-more');
-  if (showMoreBtn) {
-    showMoreBtn.addEventListener('click', () => {
-      document.querySelectorAll('.gallery__item--hidden').forEach(el => {
-        el.classList.remove('gallery__item--hidden');
-        el.style.display = 'block';
-      });
-      showMoreBtn.style.display = 'none';
+  /* --- Gallery: horizontal drag scroll --- */
+  const track = document.getElementById('galleryTrack');
+  const thumb = document.getElementById('galleryThumb');
+  if (track && thumb) {
+    let drag = false, startX = 0, scrollLeft = 0;
+
+    track.addEventListener('mousedown', e => {
+      drag = true;
+      startX = e.pageX;
+      scrollLeft = track.scrollLeft;
+      track.classList.add('dragging');
+    });
+    document.addEventListener('mouseup', () => {
+      drag = false;
+      track.classList.remove('dragging');
+    });
+    track.addEventListener('mousemove', e => {
+      if (!drag) return;
+      e.preventDefault();
+      track.scrollLeft = scrollLeft - (e.pageX - startX) * 1.5;
+    });
+    track.addEventListener('touchstart', e => {
+      startX = e.touches[0].pageX;
+      scrollLeft = track.scrollLeft;
+    }, { passive: true });
+    track.addEventListener('touchmove', e => {
+      track.scrollLeft = scrollLeft - (e.touches[0].pageX - startX);
+    }, { passive: true });
+
+    const updateThumb = () => {
+      const bar = thumb.parentElement;
+      const ratio = track.scrollLeft / Math.max(1, track.scrollWidth - track.clientWidth);
+      const tw = Math.max(40, bar.offsetWidth * track.clientWidth / track.scrollWidth);
+      thumb.style.width  = tw + 'px';
+      thumb.style.left   = (ratio * (bar.offsetWidth - tw)) + 'px';
+    };
+    track.addEventListener('scroll', updateThumb, { passive: true });
+    setTimeout(updateThumb, 200);
+
+    /* Lightbox from track */
+    const galleryImgs = Array.from(track.querySelectorAll('img'));
+    galleryImgs.forEach((img, i) => {
+      img.style.pointerEvents = 'auto';
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () => { if (!drag) openLightbox(i); });
     });
   }
 
@@ -261,7 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn     = lightbox?.querySelector('.lightbox__next');
   let currentIdx    = 0;
 
-  const getItems = () => Array.from(document.querySelectorAll('.gallery__item:not(.gallery__item--hidden) img'));
+  const getItems = () => {
+    const t = document.getElementById('galleryTrack');
+    return t ? Array.from(t.querySelectorAll('img')) : Array.from(document.querySelectorAll('.gallery__item img'));
+  };
 
   const openLightbox = idx => {
     const items = getItems();
@@ -290,10 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
       lightboxImg.style.opacity = '1';
     }, 110);
   };
-
-  document.querySelectorAll('.gallery__item').forEach((item, i) => {
-    item.addEventListener('click', () => openLightbox(i));
-  });
 
   closeBtn?.addEventListener('click', closeLightbox);
   prevBtn?.addEventListener('click', () => navigate(-1));
