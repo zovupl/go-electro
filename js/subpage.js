@@ -5,10 +5,10 @@ html.setAttribute('data-theme', isDark ? 'dark' : 'light');
 
 /* Language switcher */
 const subT = {
-  pl: { back: '← Wszystkie usługi', cta: 'Zadzwoń', book: 'Umów wizytę', hours: 'Pon–Pt: 10:00–18:00<br>Szyszkowa 41a, Warszawa (Okęcie)' },
-  ru: { back: '← Все услуги', cta: 'Позвонить', book: 'Записаться', hours: 'Пн–Пт: 10:00–18:00<br>Шышкова 41a, Варшава (Окенче)' },
-  ua: { back: '← Всі послуги', cta: 'Зателефонувати', book: 'Записатися', hours: 'Пн–Пт: 10:00–18:00<br>Шишкова 41a, Варшава (Окенче)' },
-  en: { back: '← All services', cta: 'Call us', book: 'Book a visit', hours: 'Mon–Fri: 10:00–18:00<br>Szyszkowa 41a, Warsaw (Okęcie)' }
+  pl: { back: '← Wszystkie usługi', cta: 'Zadzwoń', book: 'Umów wizytę', hours: 'Pon–Pt: 10:00–18:00<br>Szyszkowa 41a, Warszawa' },
+  ru: { back: '← Все услуги', cta: 'Позвонить', book: 'Записаться', hours: 'Пн–Пт: 10:00–18:00<br>Шышкова 41a, Варшава' },
+  ua: { back: '← Всі послуги', cta: 'Зателефонувати', book: 'Записатися', hours: 'Пн–Пт: 10:00–18:00<br>Шишкова 41a, Варшава' },
+  en: { back: '← All services', cta: 'Call us', book: 'Book a visit', hours: 'Mon–Fri: 10:00–18:00<br>Szyszkowa 41a, Warsaw' }
 };
 
 function applySubLang(lang) {
