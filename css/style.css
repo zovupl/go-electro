@@ -651,7 +651,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   transition: color var(--dur-fast) var(--ease);
 }
 .brands__marquee span:hover { color: var(--c-text); }
-.brands__more { color: var(--c-accent) !important; font-style: italic; }
+.brands__more { font-style: italic; }
 
 @keyframes marquee {
   from { transform: translateX(0); }
