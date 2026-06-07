@@ -55,30 +55,27 @@
 
   <section class="section">
     <div class="container">
-      <div class="gallery-wrapper">
-        <div class="gallery-track" id="galleryTrack">
-          <img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro" loading="lazy">
-          <img src="assets/img/gallery/g02.webp" alt="Diagnostyka hybryd" loading="lazy">
-          <img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy">
-          <img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy">
-          <img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy">
-          <img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy">
-          <img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy">
-          <img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy">
-          <img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy">
-          <img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy">
-          <img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy">
-          <img src="assets/img/gallery/g12.webp" alt="Bateria HV" loading="lazy">
-          <img src="assets/img/gallery/g13.webp" alt="Naprawa hybrydy" loading="lazy">
-          <img src="assets/img/gallery/g14.webp" alt="Serwis elektryczny" loading="lazy">
-          <img src="assets/img/gallery/g15.webp" alt="Auto w warsztacie" loading="lazy">
-          <img src="assets/img/gallery/g16.webp" alt="Naprawa silnika" loading="lazy">
-          <img src="assets/img/gallery/g17.webp" alt="Wymiana oleju" loading="lazy">
-          <img src="assets/img/gallery/g18.webp" alt="Serwis hybrydy" loading="lazy">
-          <img src="assets/img/gallery/g19.webp" alt="Warsztat Go Electro" loading="lazy">
-        </div>
-        <div class="gallery-bar">
-          <div class="gallery-thumb" id="galleryThumb"></div>
+      <div class="gallery-scroll-wrap">
+        <div class="gallery-scroll" id="galleryTrack">
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g01.webp" alt="Warsztat Go Electro" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g02.webp" alt="Diagnostyka hybryd" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g03.webp" alt="Serwis silnika" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g04.webp" alt="Mechanik przy pracy" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g05.webp" alt="Toyota na podnośniku" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g06.webp" alt="Naprawa elektryki" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g07.webp" alt="Serwis Lexus" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g08.webp" alt="Wymiana rozrządu" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g09.webp" alt="Diagnostyka komputerowa" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g10.webp" alt="Mercedes w serwisie" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g11.webp" alt="Serwis BMW" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g12.webp" alt="Bateria HV" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g13.webp" alt="Naprawa hybrydy" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g14.webp" alt="Serwis elektryczny" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g15.webp" alt="Auto w warsztacie" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g16.webp" alt="Naprawa silnika" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g17.webp" alt="Wymiana oleju" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g18.webp" alt="Serwis hybrydy" loading="lazy"></div>
+          <div class="gallery-scroll-item"><img src="assets/img/gallery/g19.webp" alt="Warsztat Go Electro" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -116,33 +113,15 @@ document.querySelectorAll('.lang-btn').forEach(b => {
   b.addEventListener('click', () => { document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); localStorage.setItem('ge-lang', b.dataset.lang); });
 });
 
-/* Gallery drag scroll */
-const track = document.getElementById('galleryTrack');
-const thumb = document.getElementById('galleryThumb');
-let drag = false, startX = 0, scrollLeft = 0;
-track.addEventListener('mousedown', e => { drag=true; startX=e.pageX; scrollLeft=track.scrollLeft; track.classList.add('dragging'); });
-document.addEventListener('mouseup', () => { drag=false; track.classList.remove('dragging'); });
-track.addEventListener('mousemove', e => { if(!drag) return; e.preventDefault(); track.scrollLeft = scrollLeft-(e.pageX-startX)*1.5; });
-track.addEventListener('touchstart', e => { startX=e.touches[0].pageX; scrollLeft=track.scrollLeft; }, {passive:true});
-track.addEventListener('touchmove', e => { track.scrollLeft = scrollLeft-(e.touches[0].pageX-startX); }, {passive:true});
-const updateThumb = () => {
-  const bar = thumb.parentElement;
-  const ratio = track.scrollLeft / Math.max(1, track.scrollWidth - track.clientWidth);
-  const tw = Math.max(40, bar.offsetWidth * track.clientWidth / track.scrollWidth);
-  thumb.style.width = tw+'px'; thumb.style.left = (ratio*(bar.offsetWidth-tw))+'px';
-};
-track.addEventListener('scroll', updateThumb, {passive:true});
-setTimeout(updateThumb, 200);
-
 /* Lightbox */
-const items = Array.from(track.querySelectorAll('img'));
+const items = Array.from(document.querySelectorAll('.gallery-scroll-item img'));
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lightbox-img');
 let cur = 0;
 const openLb = i => { cur=i; lbImg.src=items[i].src; lbImg.alt=items[i].alt; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
 const closeLb = () => { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
 const nav = dir => { cur=(cur+dir+items.length)%items.length; lbImg.style.opacity='0'; setTimeout(()=>{ lbImg.src=items[cur].src; lbImg.alt=items[cur].alt; lbImg.style.opacity='1'; },110); };
-items.forEach((img,i) => { img.style.pointerEvents='auto'; img.style.cursor='pointer'; img.addEventListener('click', ()=>{ if(!drag) openLb(i); }); });
+document.querySelectorAll('.gallery-scroll-item').forEach((item,i) => { item.addEventListener('click', ()=>openLb(i)); });
 document.querySelector('.lightbox__close').addEventListener('click', closeLb);
 document.querySelector('.lightbox__prev').addEventListener('click', ()=>nav(-1));
 document.querySelector('.lightbox__next').addEventListener('click', ()=>nav(1));

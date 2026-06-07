@@ -745,50 +745,46 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ============================================================
-   GALLERY — horizontal drag scroll
+   GALLERY — horizontal scroll (Fight Mode style)
    ============================================================ */
-.gallery-wrapper { overflow: hidden; }
+.gallery-scroll-wrap { position: relative; }
 
-.gallery-track {
+.gallery-scroll {
   display: flex;
-  gap: 10px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: none;
-  cursor: grab;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 4px;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-accent-btn) transparent;
 }
-.gallery-track::-webkit-scrollbar { display: none; }
-.gallery-track.dragging { cursor: grabbing; scroll-behavior: auto; }
+.gallery-scroll::-webkit-scrollbar { height: 4px; }
+.gallery-scroll::-webkit-scrollbar-thumb { background: var(--c-accent-btn); border-radius: 2px; }
+.gallery-scroll::-webkit-scrollbar-track { background: transparent; }
 
-.gallery-track img {
+.gallery-scroll-item {
+  flex-shrink: 0;
   height: 260px;
   width: auto;
-  flex-shrink: 0;
+  scroll-snap-align: start;
   border-radius: var(--r-md);
-  object-fit: cover;
-  pointer-events: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-scroll-item img {
+  height: 100%;
+  width: auto;
   display: block;
-  user-select: none;
+  border-radius: var(--r-md);
+  transition: filter 0.3s;
+  flex-shrink: 0;
 }
+.gallery-scroll-item:hover img { filter: brightness(1.1); }
 
-.gallery-bar {
-  height: 3px;
-  background: var(--c-border);
-  border-radius: 2px;
-  margin-top: 14px;
-  position: relative;
-}
-.gallery-thumb {
-  height: 3px;
-  background: var(--c-accent-btn);
-  border-radius: 2px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 40px;
-  transition: left 0.08s linear, width 0.08s linear;
+@media (max-width: 768px) {
+  .gallery-scroll-item { height: 200px; }
 }
 
 /* Lightbox */
