@@ -211,23 +211,25 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
 
   /* --- Hero slideshow --- */
-  const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
-  const heroFlash  = document.querySelector('.hero-flash');
-  if (heroSlides.length && heroFlash) {
-    let heroIdx = 0;
-    heroSlides[0].classList.add('active');
+  const slides = document.querySelectorAll('.hero-slide');
+  const flash  = document.querySelector('.hero-flash');
+  if (slides.length && flash) {
+    let cur = 0;
+    slides[0].classList.add('active');
 
-    function nextHeroSlide() {
-      heroFlash.classList.add('flash');
+    setInterval(() => {
+      flash.classList.add('on');
       setTimeout(() => {
-        heroSlides[heroIdx].classList.remove('active');
-        heroIdx = (heroIdx + 1) % heroSlides.length;
-        heroSlides[heroIdx].classList.add('active');
-        heroFlash.classList.remove('flash');
-        setTimeout(nextHeroSlide, 5000);
+        slides[cur].classList.remove('active');
+        slides[cur].style.animation = 'none';
+        void slides[cur].offsetHeight; // force reflow
+        slides[cur].style.animation = '';
+        slides[cur].style.transform = '';
+        cur = (cur + 1) % slides.length;
+        slides[cur].classList.add('active');
+        flash.classList.remove('on');
       }, 400);
-    }
-    setTimeout(nextHeroSlide, 5000);
+    }, 5000);
   }
 
   /* --- Hamburger --- */
