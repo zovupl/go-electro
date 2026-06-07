@@ -199,9 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Apply saved language
   applyLang(currentLang);
 
-  /* --- NAV scroll (threshold 80px) --- */
+  /* --- NAV scroll (threshold 80px) + logo swap --- */
   const nav = document.getElementById('nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 80);
+  const navLogo = document.getElementById('navLogo');
+  const onScroll = () => {
+    const scrolled = window.scrollY > 80;
+    nav.classList.toggle('scrolled', scrolled);
+    if (navLogo) navLogo.src = scrolled ? 'assets/img/logo-black.png' : 'assets/img/logo-white.png';
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 

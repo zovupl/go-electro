@@ -213,15 +213,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   width: auto;
 }
 
-/* Logo switch: white on hero, dark after scroll */
-.nav-logo-white { display: block; }
-.nav-logo-dark  { display: none;  }
-.nav.scrolled .nav-logo-white { display: none;  }
-.nav.scrolled .nav-logo-dark  { display: block; }
-
-[data-theme="dark"] .nav.scrolled .nav-logo-dark {
-  filter: brightness(0) invert(1);
-}
 [data-theme="dark"] .footer__logo img {
   filter: brightness(0) invert(1);
 }
@@ -1098,6 +1089,5 @@ html[lang="en"] .hero__title {
 
 /* Mobile logo size override */
 @media (max-width: 640px) {
-  .nav-logo-white,
-  .nav-logo-dark { height: 60px !important; }
+  #navLogo { height: 60px !important; }
 }
