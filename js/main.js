@@ -251,6 +251,35 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- Dark mode toggle --- */
   document.getElementById('theme-toggle')?.addEventListener('click', () => applyTheme(!isDark));
 
+  /* --- Shorts: horizontal drag-scroll + progress thumb --- */
+  const shortsTrack = document.getElementById('shortsTrack');
+  const shortsThumb = document.getElementById('shortsThumb');
+  if (shortsTrack && shortsThumb) {
+    const updateThumb = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = shortsTrack;
+      const ratio = scrollWidth - clientWidth;
+      const pct = ratio > 0 ? scrollLeft / ratio : 0;
+      const thumbW = (clientWidth / scrollWidth) * 100;
+      shortsThumb.style.width = thumbW + '%';
+      shortsThumb.style.left = (pct * (100 - thumbW)) + '%';
+    };
+    shortsTrack.addEventListener('scroll', updateThumb, { passive: true });
+    updateThumb();
+
+    let isDraggingShorts = false, shortsStartX = 0, shortsScrollStart = 0;
+    shortsTrack.addEventListener('mousedown', e => {
+      isDraggingShorts = true;
+      shortsStartX = e.pageX;
+      shortsScrollStart = shortsTrack.scrollLeft;
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => {
+      if (!isDraggingShorts) return;
+      shortsTrack.scrollLeft = shortsScrollStart - (e.pageX - shortsStartX);
+    });
+    window.addEventListener('mouseup', () => { isDraggingShorts = false; });
+  }
+
   /* --- Language buttons --- */
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
@@ -351,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sections
     reveal('.about__pillar', 0.15);
     reveal('.service-card', 0.07);
-    reveal('.video__item', 0.09);
+    reveal('.short-item', 0.09);
     reveal('.gallery__item', 0.04);
     reveal('.review-card', 0.1);
     reveal('.contact__block', 0.12);
