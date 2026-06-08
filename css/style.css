@@ -323,7 +323,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav__hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Mobile-only lang switcher — hidden on desktop */
-.lang-switcher-nav { display: none; }
+.lang-switcher-nav { display: none !important; }
 
 .nav__mobile {
   display: none;
@@ -1040,7 +1040,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .nav__hamburger { display: flex; margin-left: 0; }
 
   .lang-switcher-nav {
-    display: flex;
+    display: flex !important;
     gap: 2px;
     align-items: center;
     margin-left: auto;
