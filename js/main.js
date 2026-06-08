@@ -3,6 +3,12 @@
    Dark mode · i18n (PL/EN/RU/UA) · GSAP · Nav · Lightbox
    ============================================================ */
 
+/* Prevent browser from jumping to URL hash anchor on load/refresh */
+if (history.scrollRestoration) history.scrollRestoration = 'manual';
+if (window.location.hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+
 /* ----------------------------------------------------------
    TRANSLATIONS
 ---------------------------------------------------------- */
